@@ -1,2 +1,5 @@
 # MVVM
-Model View ViewModel(MVVM) clean architecture demo with two way DataBinding
+Demo for 
+Model View ViewModel(MVVM) clean architecture 
+Two way DataBinding 
+Using Kotlin languange
