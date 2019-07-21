@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="viewmodel"
+                  type="nikhil.bhople.mvvm.viewmodel.MainViewModel"/>
+
+    </data>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|top"
+            tools:context=".MainActivity">
+
+        <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewmodel.currentRandomName}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                tools:text="Some random Name" />
+
+        <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:onClick="@{() -> viewmodel.onChangeRandomClick()}"
+                android:text="Change Name"/>
+
+        <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:hint="Enter a name"
+                android:text="@={viewmodel.editTextContent}"/>
+
+        <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Display EditText Content"
+                android:onClick="@{() -> viewmodel.onDisplayEditTextContentClick()}"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:text="@{viewmodel.displayEditTextContent}"
+                tools:text="Content of EditText"/>
+
+        <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:text="Select random Name for EditText"
+                android:onClick="@{() -> viewmodel.onSelectRandomEditTextFruit()}"/>
+
+    </LinearLayout>
+</layout>
